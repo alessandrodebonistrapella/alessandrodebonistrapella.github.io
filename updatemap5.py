@@ -10,13 +10,13 @@ import json
 import dbfread
 import git
 
-with open('/Users/alessandrodebonistrapella/Desktop/webapp consorzio/webmap_ver2/data/monitoraggio_latina_1.js', 'r+') as dataFile:
+with open(r'C:\Users\alessandro\alessandrodebonistrapella.github.io/data/monitoraggio_latina_1.js', 'r+') as dataFile:
     data = dataFile.read()
     obj = data[data.find('{') : data.rfind('}')+1]
     jsonObj = json.loads(obj)
     dataFile.close() 
     
-valori_stazioni = dbfread.read('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf')  
+valori_stazioni = dbfread.read(r'C:\Users\alessandro\Documents\GIS DataBase\Monitoraggio/monitoraggio_latina.dbf')  
 
 staz_si02 = valori_stazioni[0]
 staz_si03 = valori_stazioni[1]
@@ -58,7 +58,7 @@ prova = str(jsonObj)
 
 prova = prova.replace("'",'"')
 
-f= open("/Users/alessandrodebonistrapella/Documents/alessandrodebonistrapella.github.io/data/monitoraggio_latina_1.js","w+")
+f= open(r"C:\Users\alessandro\alessandrodebonistrapella.github.io/data/monitoraggio_latina_1.js","w+")
 
 f.write('var json_monitoraggio_latina_1 = '+prova)
 #    for i in range(10):
@@ -66,5 +66,5 @@ f.write('var json_monitoraggio_latina_1 = '+prova)
 f.close()
 
 #%%
-import os
-os.system('./hotpush.sh')
+#import os
+#os.system('updatepg.bat')
