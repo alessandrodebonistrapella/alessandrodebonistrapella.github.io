@@ -7,8 +7,9 @@ Created on Mon Dec  2 09:38:56 2019
 """
 
 import json
-import dbfread
-import git
+from dbfread import DBF
+#import dbfread
+#import git
 
 with open('/Users/alessandrodebonistrapella/Desktop/webapp consorzio/webmap_ver2/data/monitoraggio_latina_1.js', 'r+') as dataFile:
     data = dataFile.read()
@@ -16,7 +17,7 @@ with open('/Users/alessandrodebonistrapella/Desktop/webapp consorzio/webmap_ver2
     jsonObj = json.loads(obj)
     dataFile.close() 
     
-valori_stazioni = dbfread.read('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf')  
+valori_stazioni = DBF('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf',load=True)  
 
 staz_si02 = valori_stazioni[0]
 staz_si03 = valori_stazioni[1]
@@ -65,6 +66,3 @@ f.write('var json_monitoraggio_latina_1 = '+prova)
 #     f.write("This is line %d\r\n" % (i+1))
 f.close()
 
-#%%
-import os
-os.system('./hotpush.sh')
