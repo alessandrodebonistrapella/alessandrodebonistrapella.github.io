@@ -16,8 +16,39 @@ with open('/Users/alessandrodebonistrapella/Desktop/webapp consorzio/webmap_ver2
     obj = data[data.find('{') : data.rfind('}')+1]
     jsonObj = json.loads(obj)
     dataFile.close() 
-    
-valori_stazioni = DBF('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf',load=True)  
+
+#for record in DBF('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf'):
+#    
+#    print(record)
+
+
+#with DBF('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf') as valori_stazioni:
+#    staz_si02 = valori_stazioni[0]
+#    staz_si03 = valori_stazioni[1]
+#    staz_si04 = valori_stazioni[2]
+#    staz_si05 = valori_stazioni[3]
+#    staz_si06 = valori_stazioni[4]
+#    staz_sin08 = valori_stazioni[5]
+#    staz_sin09 = valori_stazioni[6]
+#    staz_sin10 = valori_stazioni[7]
+#    staz_sin11 = valori_stazioni[8]
+#    staz_sin12 = valori_stazioni[9]
+#    
+#    staz_si02 = dict(staz_si02)
+#    staz_si03 = dict(staz_si03)
+#    staz_si04 = dict(staz_si04)
+#    staz_si05 = dict(staz_si05)
+#    staz_si06 = dict(staz_si06)
+#    staz_sin08 = dict(staz_sin08)
+#    staz_sin09 = dict(staz_sin09)
+#    staz_sin10 = dict(staz_sin10)
+#    staz_sin11 = dict(staz_sin11)
+#    staz_sin12 = dict(staz_sin12)
+#    
+#valori_stazioni = DBF('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf',load=True)  
+
+valori_stazioni = list(DBF('/Users/alessandrodebonistrapella/Google Drive/GIS DataBase/Monitoraggio/monitoraggio_latina.dbf',load=True))  
+
 
 staz_si02 = valori_stazioni[0]
 staz_si03 = valori_stazioni[1]
