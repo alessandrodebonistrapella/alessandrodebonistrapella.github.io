@@ -11,7 +11,7 @@ from dbfread import DBF
 #import dbfread
 #import git
 
-with open('/Users/alessandrodebonistrapella/Desktop/webapp consorzio/webmap_ver2/data/monitoraggio_latina_1.js', 'r+') as dataFile:
+with open("/Users/alessandrodebonistrapella/Documents/alessandrodebonistrapella.github.io/data/monitoraggio_latina_1.js", 'r+') as dataFile:
     data = dataFile.read()
     obj = data[data.find('{') : data.rfind('}')+1]
     jsonObj = json.loads(obj)
