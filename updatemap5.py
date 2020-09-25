@@ -6,6 +6,8 @@ Created on Mon Dec  2 09:38:56 2019
 @author: root
 """
 
+##Eseguire downloadftp_v16.py poi updatemap5.py in alessandrodebonistrapella.github.io poi hotpush.sh
+
 import json
 from dbfread import DBF
 #import dbfread
